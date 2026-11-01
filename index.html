@@ -1,13 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Abhishek Maiti — Postdoctoral Research Fellow at Radboud University.">
+
+<meta name="description" content="Abhishek Maiti — Experimental Physicist working in Atomic-Scale Quantum Nanoscience at Radboud University.">
+
 <title>Abhishek Maiti | Academic Homepage</title>
 
 <style>
+
 body {
     max-width: 850px;
     margin: 45px auto;
@@ -19,25 +23,36 @@ body {
     background: white;
 }
 
-h1 {
-    font-size: 30px;
-    font-weight: normal;
-    margin-bottom: 3px;
+/* Profile section */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
 }
 
-h2 {
-    font-family: Arial, sans-serif;
-    font-size: 17px;
-    margin-top: 30px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 4px;
+.profile-photo {
+    width: 155px;
+    height: 175px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.profile-info h1 {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0 0 5px;
 }
 
 .subtitle {
     color: #555;
     margin-top: 0;
+    line-height: 1.55;
 }
+
+/* Navigation */
 
 nav {
     margin: 22px 0 30px;
@@ -47,6 +62,8 @@ nav {
 
 nav a {
     margin-right: 16px;
+    display: inline-block;
+    margin-bottom: 6px;
 }
 
 a {
@@ -56,6 +73,18 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Headings */
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
 }
 
 p {
@@ -78,169 +107,351 @@ footer {
     font-size: 13px;
     color: #777;
 }
+
+/* Mobile display */
+
+@media (max-width: 550px) {
+
+    body {
+        margin-top: 25px;
+        padding: 0 18px;
+    }
+
+    .profile {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .profile-photo {
+        width: 110px;
+        height: 130px;
+    }
+
+    .profile-info h1 {
+        font-size: 24px;
+    }
+
+    .profile-info {
+        min-width: 0;
+    }
+
+    nav a {
+        margin-right: 10px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Abhishek Maiti</h1>
-<p class="subtitle">
-Postdoctoral Research Fellow<br>
-Institute for Molecules and Materials, Radboud University<br>
-Nijmegen, The Netherlands
-</p>
 
-<nav>
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#publications">Publications</a>
-<a href="#experience">Experience</a>
-<a href="#awards">Awards</a>
-<a href="#contact">Contact</a>
-<a href="https://scholar.google.com/citations?user=Z5YoBcgAAAAJ&hl=en">Google Scholar</a>
-</nav>
+    <div class="profile">
+
+        <!-- Upload your photograph as photo.jpg -->
+        <img src="photoAM.jpg"
+             alt="Portrait of Abhishek Maiti"
+             class="profile-photo">
+
+        <div class="profile-info">
+
+            <h1>Abhishek Maiti</h1>
+
+            <p class="subtitle">
+                Experimental Physicist<br>
+                Atomic-Scale Quantum Nanoscience<br>
+                Institute for Molecules and Materials,
+                Radboud University<br>
+                Nijmegen, The Netherlands
+            </p>
+
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+        <a href="https://scholar.google.com/citations?user=Z5YoBcgAAAAJ&hl=en">
+            Google Scholar
+        </a>
+    </nav>
+
 </header>
 
-<h2 id="about">About</h2>
+
+<main>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About</h2>
 
 <p>
-I am an experimental condensed-matter physicist working on quantum materials,
-nanoscale electronic phenomena, and scanning probe microscopy.
-I am currently a Postdoctoral Research Fellow at Radboud University,
-The Netherlands. Previously, I was a Marie Skłodowska-Curie Postdoctoral
-Fellow at Université Paris-Saclay / CNRS, France.
+I am an experimental physicist interested in understanding,
+probing, and engineering quantum phenomena at the atomic scale.
+My research lies at the intersection of quantum materials,
+scanning probe microscopy, nanoscale physics, and quantum
+functionality.
 </p>
 
 <p>
-I received my PhD in Physics from Jadavpur University, India, based on
-research conducted at the Indian Association for the Cultivation of Science.
+My broader goal is to explore how atomic-scale interactions,
+collective excitations, and interfacial phenomena can be
+harnessed to create new forms of quantum matter and
+functionality.
 </p>
-
-<h2 id="research">Research interests</h2>
 
 <p>
-My research interests include:
+My current research focuses on atomic-scale quantum sensing,
+neuromorphic matter, artificial quantum materials, and
+emergent quantum phenomena in engineered nanoscale systems.
+My previous research on metal-halide perovskites,
+spin-dependent phenomena, and nanoscale optoelectronics
+provides a foundation for these research directions.
 </p>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+<h2>Research Interests</h2>
 
 <ul>
-<li>Atomic-scale quantum sensing and shot-noise microscopy</li>
-<li>Artificial quantum materials and atomic-scale engineering</li>
-<li>Quantum states in superconducting and topological materials</li>
-<li>Atomic-scale neuromorphic matter</li>
-<li>Chiral interfaces and spin-dependent transport</li>
-<li>Nanoscale optoelectronics</li>
+
+<li>
+<strong>Atomic-Scale Quantum Sensing:</strong>
+Probing local quantum phenomena, electronic correlations,
+and atomic-scale interactions using advanced scanning
+probe techniques.
+</li>
+
+<li>
+<strong>Atomic-Scale Neuromorphic Matter:</strong>
+Exploring collective atomic and electronic processes
+for adaptive, memory-bearing, and brain-inspired
+nanoscale matter.
+</li>
+
+<li>
+<strong>Artificial Quantum Materials:</strong>
+Designing and investigating emergent quantum states
+through atomic-scale structural and interfacial engineering.
+</li>
+
+<li>
+<strong>Chiral Interfaces and Quantum Spintronics:</strong>
+Investigating spin-dependent interactions and chiral
+effects at engineered interfaces.
+</li>
+
+<li>
+<strong>Nanoscale Optoelectronics:</strong>
+Understanding charge-carrier dynamics, recombination,
+and spin-dependent phenomena in metal-halide perovskites.
+</li>
+
 </ul>
 
-<h2 id="publications">Selected publications</h2>
+</section>
+
+
+<!-- PUBLICATIONS -->
+
+<section id="publications">
+
+<h2>Selected Publications</h2>
+
+<p>
+<strong>19 published research articles</strong> |
+586 citations | h-index: 13
+</p>
 
 <ol>
+
 <li>
-<strong>A. Maiti</strong> et al.,
-"Evidence for Atomic-Scale Vibron-Mediated Electron Bunching,"
-<em>Physical Review Letters</em> 136, 236501 (2026).
-Editor’s Suggestion; Featured in Physics.
-<a href="https://journals.aps.org/prl/abstract/10.1103/zvf5-wln4">[Link]</a>
+<strong>Evidence for Atomic-Scale Vibron-Mediated
+Electron Bunching</strong><br>
+<em>Physical Review Letters</em> (2026).
+<br>
+<span class="small">
+Editor's Suggestion; Featured in Physics.
+</span>
 </li>
 
 <li>
-A. Bera, <strong>A. Maiti</strong>, A. J. Pal,
-"Electronic States of Single Perovskite Quantum Dots in Weak and Strong
-Interaction Regimes,"
-<em>Nano Letters</em> 24, 11544 (2024).
-<a href="https://doi.org/10.1021/acs.nanolett.4c03001">[Link]</a>
+<strong>Research on Metal Halide Perovskite
+Quantum Dots</strong><br>
+<em>Nano Letters</em> (2024).
 </li>
 
 <li>
-<strong>A. Maiti</strong> et al.,
-"Quantifying Anisotropic Thermal Transport in Two-Dimensional Perovskite,"
-<em>Physical Review Materials</em> 7, 023801 (2023).
-<a href="https://doi.org/10.1103/PhysRevMaterials.7.023801">[Link]</a>
+<strong>Thermal Transport in Metal Halide Perovskites</strong><br>
+<em>Physical Review Materials</em> (2023).
 </li>
 
 <li>
-<strong>A. Maiti</strong>, A. J. Pal,
-"Spin-Selective Charge Transport in Lead-Free Chiral Perovskites,"
-<em>Angewandte Chemie International Edition</em> 61, e202214161 (2022).
-<a href="https://doi.org/10.1002/anie.202214161">[Link]</a>
+<strong>Chiral Metal Halide Perovskites</strong><br>
+<em>Angewandte Chemie International Edition</em> (2022).
 </li>
 
 <li>
-<strong>A. Maiti</strong>, A. J. Pal,
-"Carrier Recombination in CH₃NH₃PbI₃: Why is it a Slow Process?"
-<em>Reports on Progress in Physics</em> 85, 024501 (2022).
-<a href="https://doi.org/10.1088/1361-6633/ac4be9">[Link]</a>
+<strong>Carrier Recombination in Metal Halide Perovskites</strong><br>
+<em>Reports on Progress in Physics</em> (2022).
 </li>
 
 <li>
-<strong>A. Maiti</strong> et al.,
-"Rashba Band Splitting in CH₃NH₃PbI₃,"
-<em>Nano Letters</em> 20, 292–299 (2020).
-<a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.9b03800">[Link]</a>
+<strong>Rashba Splitting in Metal Halide Perovskites</strong><br>
+<em>Nano Letters</em> (2020).
 </li>
+
 </ol>
 
 <p>
-A complete list of publications is available on
 <a href="https://scholar.google.com/citations?user=Z5YoBcgAAAAJ&hl=en">
-Google Scholar</a>.
+Complete publication list and citation record →
+</a>
 </p>
-
-<p class="small">
-19 published papers · 586 citations · h-index 13
-(as reported in my CV; metrics may change).
-</p>
-
-<h2 id="experience">Academic experience</h2>
-
-<ul>
-<li><strong>2026–present:</strong> Postdoctoral Research Fellow,
-Radboud University, The Netherlands.</li>
-
-<li><strong>2024–2026:</strong> Marie Skłodowska-Curie Postdoctoral Fellow,
-Université Paris-Saclay / CNRS, France.</li>
-
-<li><strong>2023–2024:</strong> Postdoctoral Fellow,
-Université Paris-Saclay / CNRS, France.</li>
-
-<li><strong>2021–2022:</strong> Newton–Bhabha PhD Placement Fellow,
-Lancaster University, UK.</li>
-
-<li><strong>2018–2023:</strong> PhD in Physics,
-Jadavpur University, India. Research conducted at IACS, Kolkata.</li>
-</ul>
-
-<h2 id="awards">Awards and fellowships</h2>
-
-<ul>
-<li>Marie Skłodowska-Curie Actions Postdoctoral Fellowship, 2024.</li>
-<li>Excellence Fellowship, Israel Academy of Sciences (offered), 2023.</li>
-<li>Young Scientist Award, Materials Research Society of India, 2022.</li>
-<li>Newton–Bhabha PhD Placement Award, 2021.</li>
-<li>Young Achievers Award, 2021.</li>
-</ul>
-
-<h2 id="contact">Contact</h2>
 
 <p>
-Abhishek Maiti<br>
+<a href="https://arxiv.org/abs/2604.26002">
+Recent preprint on arXiv →
+</a>
+</p>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2>Academic Experience</h2>
+
+<p>
+<strong>Postdoctoral Research Fellow</strong><br>
+Institute for Molecules and Materials,
+Radboud University, Nijmegen, The Netherlands<br>
+<span class="small">April 2026 – Present</span>
+</p>
+
+<p>
+<strong>Marie Skłodowska-Curie Postdoctoral Fellow</strong><br>
+Laboratoire de Physique des Solides,
+Université Paris-Saclay / CNRS, Orsay, France<br>
+<span class="small">April 2024 – March 2026</span>
+</p>
+
+<p>
+<strong>Postdoctoral Researcher</strong><br>
+Laboratoire de Physique des Solides,
+Université Paris-Saclay / CNRS, Orsay, France<br>
+<span class="small">April 2023 – March 2024</span>
+</p>
+
+<p>
+<strong>Newton-Bhabha PhD Placement Fellow</strong><br>
+Lancaster University, United Kingdom<br>
+<span class="small">September 2021 – January 2022</span>
+</p>
+
+<p>
+<strong>PhD in Physics</strong><br>
+Research at Indian Association for the Cultivation
+of Science; degree awarded by Jadavpur University, India<br>
+<span class="small">2018 – 2023</span>
+</p>
+
+</section>
+
+
+<!-- AWARDS -->
+
+<section id="awards">
+
+<h2>Awards and Fellowships</h2>
+
+<ul>
+
+<li>
+Marie Skłodowska-Curie Postdoctoral Fellowship,
+European Commission.
+</li>
+
+<li>
+Excellence Fellowship, Université Paris-Saclay
+(offered).
+</li>
+
+<li>
+Young Scientist Award.
+</li>
+
+<li>
+Newton-Bhabha PhD Placement Fellowship.
+</li>
+
+<li>
+Young Achievers Award.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>
+<strong>Email:</strong>
+<a href="mailto:abhishek.juphysics@gmail.com">
+abhishek.juphysics@gmail.com
+</a>
+</p>
+
+<p>
+<strong>Institution:</strong><br>
 Institute for Molecules and Materials<br>
 Radboud University<br>
 Nijmegen, The Netherlands
 </p>
 
 <p>
-Email: <a href="mailto:abhishek.juphysics@gmail.com">
-abhishek.juphysics@gmail.com</a>
+<a href="https://spm.science.ru.nl/members.html">
+Institutional Profile →
+</a>
 </p>
 
 <p>
-<a href="https://spm.science.ru.nl/members.html">Institutional profile</a> |
-<a href="https://scholar.google.com/citations?user=Z5YoBcgAAAAJ&hl=en">Google Scholar</a>
+<a href="https://scholar.google.com/citations?user=Z5YoBcgAAAAJ&hl=en">
+Google Scholar →
+</a>
 </p>
 
+</section>
+
+</main>
+
+
 <footer>
-© Abhishek Maiti
+
+<p>
+© 2026 Abhishek Maiti. Academic Homepage.
+</p>
+
 </footer>
 
 </body>
