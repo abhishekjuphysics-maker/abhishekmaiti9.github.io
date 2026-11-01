@@ -1,36 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="description" content="Abhishek Maiti — Experimental Physicist working in Atomic-Scale Quantum Nanoscience at Radboud University.">
-
+<meta name="description" content="Abhishek Maiti - Experimental Physicist, Radboud University">
 <title>Abhishek Maiti | Academic Homepage</title>
 
 <style>
+:root {
+    --blue: #315d7d;
+    --dark: #293c4e;
+    --text: #333d46;
+    --muted: #707b84;
+    --line: #dfe5e9;
+    --bg: #ffffff;
+}
 
-/* GENERAL LAYOUT */
+* {
+    box-sizing: border-box;
+}
 
 html {
-    background: #f3f5f7;
     scroll-behavior: smooth;
 }
 
 body {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 42px 55px;
+    max-width: 1050px;
+    margin: 35px auto;
+    padding: 35px 55px;
+    background: var(--bg);
+    color: var(--text);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 16px;
-    line-height: 1.7;
-    color: #293442;
-    background: #ffffff;
-    box-shadow: 0 3px 20px rgba(30, 50, 80, 0.06);
+    line-height: 1.75;
+    box-shadow: 0 2px 22px rgba(0,0,0,0.045);
 }
 
-/* PROFILE HEADER */
+/* HEADER */
 
 .profile {
     display: flex;
@@ -40,67 +47,83 @@ body {
 }
 
 .profile-photo {
-    width: 155px;
-    height: 175px;
+    width: 145px;
+    height: 165px;
     object-fit: cover;
     object-position: center;
-    border-radius: 3px;
+    border: 1px solid var(--line);
 }
 
 .profile-info {
     flex: 1;
-    min-width: 0;
 }
 
 .profile-info h1 {
-    font-size: 32px;
+    font-size: 33px;
     font-weight: normal;
-    margin: 0 0 8px;
-    color: #24384b;
+    color: var(--dark);
+    margin: 0 0 7px;
 }
 
 .subtitle {
-    color: #555e68;
+    color: #5d6872;
     margin: 0;
     line-height: 1.65;
 }
 
-/* CONTACT LINKS */
+/* CONTACT */
 
 .contact-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 22px;
-    margin: 20px 0 25px;
+    gap: 10px 25px;
     padding: 12px 0;
-    border-top: 1px solid #e5e9ed;
-    border-bottom: 1px solid #e5e9ed;
+    margin-bottom: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
 
-/* NAVIGATION */
+/* NAVIGATION TABS */
 
 nav {
-    margin: 22px 0 32px;
-    padding: 12px 0;
-    border-top: 1px solid #e5e9ed;
-    border-bottom: 1px solid #e5e9ed;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 25px;
+    border-bottom: 1px solid var(--line);
+    padding: 13px 0 0;
+    margin-bottom: 30px;
     font-family: Arial, sans-serif;
-    font-size: 14px;
 }
 
-nav a {
-    display: inline-block;
-    margin-right: 22px;
-    margin-bottom: 3px;
-    color: #315c7e;
+nav button {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 0 12px;
+    margin-bottom: -1px;
+    color: #496276;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+nav button:hover {
+    color: var(--blue);
+}
+
+nav button.active {
+    color: var(--dark);
+    border-bottom: 2px solid var(--blue);
+    font-weight: bold;
 }
 
 /* LINKS */
 
 a {
-    color: #245b85;
+    color: var(--blue);
     text-decoration: none;
 }
 
@@ -108,118 +131,164 @@ a:hover {
     text-decoration: underline;
 }
 
-/* HEADINGS */
+/* CONTENT */
+
+.tab-content {
+    display: none;
+    min-height: 400px;
+    animation: appear 0.25s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 h2 {
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: normal;
-    color: #263b50;
-    margin-top: 34px;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #dce2e8;
+    color: var(--dark);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 7px;
+    margin: 30px 0 14px;
+}
+
+h3 {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    color: var(--dark);
+    margin-top: 26px;
+}
+
+h4 {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: var(--dark);
+    margin-top: 28px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 5px;
 }
 
 p {
-    margin: 8px 0 13px;
+    margin: 9px 0 15px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .small {
     font-size: 14px;
-    color: #6b747d;
+    color: var(--muted);
 }
 
 /* PUBLICATIONS */
 
 .publication-metrics {
+    padding: 12px 15px;
     margin: 18px 0 25px;
+    background: #f7f9fa;
+    border-left: 3px solid #8aa6bb;
     line-height: 1.9;
 }
 
 .publication-list {
     list-style: none;
     padding: 0;
-    margin: 15px 0;
 }
 
 .publication-list li {
-    margin-bottom: 18px;
-    line-height: 1.6;
-}
-
-.publication-list a {
-    color: #245b85;
+    margin-bottom: 20px;
+    line-height: 1.65;
 }
 
 .publication-list strong {
-    color: #263746;
-}
-
-.publication-year {
-    font-weight: bold;
-    font-size: 17px;
-    margin-top: 28px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #cbd5df;
+    color: var(--dark);
 }
 
 .publication-note {
-    color: #66717d;
+    color: var(--muted);
     font-size: 14px;
 }
 
-    .award-list {
+.publication-year {
+    margin-top: 30px;
+}
+
+/* AWARDS */
+
+.award-list, .talk-list {
     list-style: none;
     padding: 0;
-    margin: 18px 0;
 }
 
-.award-list li {
-    margin-bottom: 19px;
-    line-height: 1.5;
+.award-list li, .talk-list li {
+    margin-bottom: 20px;
 }
 
-.award-list strong {
+.award-list strong, .talk-list strong {
     display: block;
-    color: #293f54;
-    font-weight: bold;
+    color: var(--dark);
 }
 
-.award-details {
+.award-details, .talk-details {
     display: block;
     font-size: 14px;
-    color: #68737e;
+    color: var(--muted);
+}
+
+.talk-title {
+    display: block;
     margin-top: 3px;
+}
+
+/* REFERENCES */
+
+.reference {
+    margin: 22px 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+}
+
+.reference strong {
+    color: var(--dark);
+}
+
+.reference-role {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
 }
 
 /* FOOTER */
 
 footer {
-    border-top: 1px solid #e1e5e9;
+    border-top: 1px solid var(--line);
     margin-top: 40px;
-    padding-top: 14px;
+    padding-top: 15px;
+    color: #7b838b;
+    font-family: Arial, sans-serif;
     font-size: 13px;
-    color: #777;
 }
 
 /* MOBILE */
 
-@media (max-width: 600px) {
+@media(max-width:650px) {
 
     body {
         margin: 0;
-        padding: 25px 20px;
+        padding: 22px 19px;
         box-shadow: none;
     }
 
     .profile {
+        gap: 15px;
         align-items: flex-start;
-        gap: 16px;
     }
 
     .profile-photo {
@@ -232,19 +301,22 @@ footer {
     }
 
     .subtitle {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.5;
     }
 
-    .contact-links {
-        gap: 9px 16px;
+    nav {
+        gap: 0 18px;
     }
 
-    nav a {
-        margin-right: 13px;
+    nav button {
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 18px;
     }
 }
-
 </style>
 </head>
 
@@ -252,78 +324,110 @@ footer {
 
 <header>
 
-    <div class="profile">
+<div class="profile">
 
-        <img src="PhotoAM.jpg"
-             alt="Portrait of Abhishek Maiti"
-             class="profile-photo">
+<img src="PhotoAM.jpg"
+     alt="Abhishek Maiti"
+     class="profile-photo">
 
-        <div class="profile-info">
+<div class="profile-info">
 
-            <h1>Abhishek Maiti</h1>
+<h1>Abhishek Maiti</h1>
 
-            <p class="subtitle">
-                Experimental Physicist<br>
-                Atomic-Scale Quantum Nanoscience<br>
-                Institute for Molecules and Materials,
-                Radboud University<br>
-                Nijmegen, The Netherlands<br>
-                Former Marie Skłodowska-Curie Fellow,
-                CNRS / Université Paris-Saclay, France
-            </p>
+<p class="subtitle">
+Experimental Physicist<br>
+Atomic-Scale Quantum Nanoscience<br>
+Institute for Molecules and Materials,
+Radboud University<br>
+Nijmegen, The Netherlands<br>
+Former Marie Skłodowska-Curie Fellow,
+CNRS / Université Paris-Saclay, France
+</p>
 
-        </div>
+</div>
+</div>
 
-    </div>
+<div class="contact-links">
 
-    <div class="contact-links">
+<a href="mailto:abhishek.juphysics@gmail.com">Email</a>
 
-        <a href="mailto:abhishek.juphysics@gmail.com">
-            Email
-        </a>
+<a href="https://spm.science.ru.nl/members.html"
+target="_blank">Institutional Profile</a>
 
-        <a href="https://spm.science.ru.nl/members.html"
-           target="_blank" rel="noopener noreferrer">
-            Institutional Profile
-        </a>
+<a href="https://scholar.google.com/citations?user=Z5YoBcgAAAAJ&hl=en"
+target="_blank">Google Scholar</a>
 
-        <a href="https://scholar.google.com/citations?user=Z5YoBcgAAAAJ&hl=en"
-           target="_blank" rel="noopener noreferrer">
-            Google Scholar
-        </a>
-
-    </div>
+</div>
 
 </header>
 
+<!-- NAVIGATION -->
+
+<nav aria-label="Main navigation">
+
+<button class="active" onclick="showTab('home',this)">Home</button>
+
+<button onclick="showTab('research',this)">Research</button>
+
+<button onclick="showTab('publications',this)">Publications</button>
+
+<button onclick="showTab('experience',this)">Experience</button>
+
+<button onclick="showTab('awards',this)">Awards</button>
+
+<button onclick="showTab('talks',this)">Talks</button>
+
+<button onclick="showTab('about',this)">About</button>
+
+</nav>
+
 <main>
-    
-<!-- ABOUT -->
 
-<section id="about">
+<!-- HOME -->
 
-<h2>About</h2>
+<section id="home" class="tab-content active">
+
+<h2>Welcome</h2>
 
 <p>
-Recent advances in condensed matter physics and material science are increasingly shaped by two major frontiers: nanotechnology and quantum materials. 
+Welcome to my academic homepage.
+</p>
 
-My research aims to bridge these fields by harnessing nanoscience to probe and engineer quantum materials with atomic precision.
-    
-My favourite experimental technique is scanning tunnelling microscopy (STM), which enables atomic-scale imaging and probing electronic density of states. In addition, STM also offers the ability to manipulate indiviudal atoms on the surface and construct atomically precise nanostructures. 
+<p>
+Recent advances in condensed matter physics and material science
+are increasingly shaped by two major frontiers: nanotechnology
+and quantum materials.
+</p>
 
-Furthermore, by integrating high-frequency techniques into conventional STM setups, one can investigate time-domain phenomena and access dynamical information at the atomic scale.
-    
-This makes it a powerful tool not only for exploring quantum phenomena at the atomic scale but also for engineering novel quantum systems with tailored functionalities.
+<p>
+My research aims to bridge these fields by harnessing nanoscience
+to probe and engineer quantum materials with atomic precision.
+</p>
 
-My long-term vision is to build quantum matter and technologies atom by atom, using individual quantum building blocks to create functionalities with long coherence time.
-    
+<p>
+My favourite experimental technique is scanning tunnelling
+microscopy (STM), which enables atomic-scale imaging and probing
+of electronic density of states.
+</p>
+
+<p>
+Furthermore, by integrating high-frequency techniques into
+conventional STM setups, one can investigate time-domain
+phenomena and access dynamical information at the atomic scale.
+</p>
+
+<p>
+My long-term vision is to build quantum matter and technologies
+atom by atom, using individual quantum building blocks to
+create functionalities with long coherence time.
 </p>
 
 </section>
-    
+
+
 <!-- RESEARCH -->
 
-<section id="research">
+<section id="research" class="tab-content">
 
 <h2>Research Interests</h2>
 
@@ -331,97 +435,47 @@ My long-term vision is to build quantum matter and technologies atom by atom, us
 
 <li>
 <strong>Atomic-Scale Quantum Sensing: Spin on Surfaces</strong><br>
-Using individual surface spins as local quantum sensors to probe atomic-scale magnetic phenomena, electronic states, and quantum correlations.
+Using individual surface spins as local quantum sensors to probe
+atomic-scale magnetic phenomena, electronic states, and
+quantum correlations.
 </li>
 
 <li>
 <strong>Artificial Quantum Materials: Hamiltonian Engineering</strong><br>
-Engineering atomic lattices and interatomic couplings to tailor electronic Hamiltonians and realise artificial quantum states with designed functionalities.
+Engineering atomic lattices and interatomic couplings to tailor
+electronic Hamiltonians and realise artificial quantum states
+with designed functionalities.
 </li>
 
 <li>
 <strong>Atomic-Scale Quantum Transport</strong><br>
-Employing broadband scanning tunnelling spectroscopy (noise measurements, electronic pump-probe, spin resonance measurements) to probe charge-transport fluctuations, transport statistics, and dynamcial electronic correlations at the atomic scale.
+Employing broadband scanning tunnelling spectroscopy
+(noise measurements, electronic pump-probe, spin resonance
+measurements) to probe charge-transport fluctuations,
+transport statistics, and dynamical electronic correlations
+at the atomic scale.
 </li>
 
 </ul>
-</section>
-
-<!-- EXPERIENCE -->
-
-<section id="experience">
-
-<h2>Academic Appointments & Education</h2>
-
-<p>
-<strong>Postdoctoral Research Fellow</strong><br>
-Institute for Molecules and Materials,
-<a href="https://www.ru.nl/en/departments/institute-for-molecules-and-materials/scanning-probe-microscopy"
-target="_blank" rel="noopener noreferrer">
-Scanning Probe Microscopy Group
-</a>,
-Radboud University, Nijmegen, The Netherlands<br>
-<span class="small">April 2026 – Present</span>
-</p>
-
-<p>
-<strong>Marie Skłodowska-Curie Postdoctoral Fellow</strong><br>
-<a href="https://equipes.lps.u-psud.fr/ns2/"
-target="_blank" rel="noopener noreferrer">
-Nanostructure at Nanosecond Group</a>,
-Laboratoire de Physique des Solides, Université Paris-Saclay / CNRS,
-Orsay, France<br>
-<span class="small">April 2024 – March 2026</span>
-</p>
-
-<p>
-<strong>Postdoctoral Researcher</strong><br>
-<a href="https://equipes.lps.u-psud.fr/ns2/"
-target="_blank" rel="noopener noreferrer">
-Nanostructure at Nanosecond Group</a>,
-Laboratoire de Physique des Solides, Université Paris-Saclay / CNRS,
-Orsay, France<br>
-<span class="small">April 2023 – March 2024</span>
-</p>
-
-<p>
-<strong>Newton-Bhabha PhD Placement Fellow</strong><br>
-<a href="https://www.nano-science.com/"
-target="_blank" rel="noopener noreferrer">
-Lancaster University Nanoscience Group
-</a>,
-Lancaster University, United Kingdom<br>
-<span class="small">September 2021 – January 2022</span>
-</p>
-
-<p>
-<strong>PhD in Physics</strong><br>
-Research conducted at the
-<a href="https://iacs.res.in/athusers/index.php?navid=0&userid=IACS006"
-target="_blank" rel="noopener noreferrer">
-Semiconductor Device Physics Group </a>,
-Indian Association for the Cultivation of Science
-<br>
-Kolkata, India.<br>
-Degree awarded by Jadavpur University, India.<br>
-<span class="small">January 2018 – January 2023</span>
-</p>
 
 </section>
 
-</section>
+
 <!-- PUBLICATIONS -->
 
-<section id="publications">
+<section id="publications" class="tab-content">
 
 <h2>Publications</h2>
 
 <div class="publication-metrics">
+
 <strong>Published papers:</strong> 19 &nbsp; | &nbsp;
 <strong>Preprints / Under review:</strong> 2<br>
+
 <strong>Citations:</strong> 638 &nbsp; | &nbsp;
 <strong>h-index:</strong> 13 &nbsp; | &nbsp;
 <strong>i10-index:</strong> 15
+
 </div>
 
 <h3>Preprints and Manuscripts Under Review</h3>
@@ -433,7 +487,9 @@ Degree awarded by Jadavpur University, India.<br>
 G. D. Gu, P. Simon, F. Massee.
 Tunnelling Dynamics and Intrinsic Lifetimes of Vortex Bound States
 in Fe(Se,Te) by Shot-Noise Microscopy.
-<span class="publication-note">Under review in Nature Communications.</span>
+<span class="publication-note">
+Under review in Nature Communications.
+</span>
 </li>
 
 <li>
@@ -441,7 +497,9 @@ in Fe(Se,Te) by Shot-Noise Microscopy.
 <a href="https://arxiv.org/abs/2604.26002" target="_blank">
 Exposing Impostor Majorana Zero Modes through Atomic-Scale Shot-Noise.
 </a>
-<span class="publication-note">arXiv:2604.26002 (2026). Under review in Physical Review Letters.</span>
+<span class="publication-note">
+arXiv:2604.26002 (2026). Under review in Physical Review Letters.
+</span>
 </li>
 
 </ol>
@@ -461,7 +519,9 @@ J. Estève, F. Pistolesi, M. Aprili, F. Massee.
 Evidence for Atomic-Scale Vibron-Mediated Electron Bunching.
 </a>
 <strong>Phys. Rev. Lett.</strong> 136, 236501 (2026).
-<span class="publication-note">Editor's Suggestion; Featured in Physics.</span>
+<span class="publication-note">
+Editor's Suggestion; Featured in Physics.
+</span>
 </li>
 
 </ol>
@@ -673,240 +733,330 @@ in Limiting the Performance of Solar Cells.
 
 </ol>
 
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience" class="tab-content">
+
+<h2>Academic Appointments & Education</h2>
+
+<p>
+<strong>Postdoctoral Research Fellow</strong><br>
+Institute for Molecules and Materials,
+<a href="https://www.ru.nl/en/departments/institute-for-molecules-and-materials/scanning-probe-microscopy">
+Scanning Probe Microscopy Group</a>,
+Radboud University, Nijmegen, The Netherlands<br>
+<span class="small">April 2026 – Present</span>
+</p>
+
+<p>
+<strong>Marie Skłodowska-Curie Postdoctoral Fellow</strong><br>
+<a href="https://equipes.lps.u-psud.fr/ns2/">
+Nanostructure at Nanosecond Group</a>,
+Laboratoire de Physique des Solides,
+Université Paris-Saclay / CNRS, Orsay, France<br>
+<span class="small">April 2024 – March 2026</span>
+</p>
+
+<p>
+<strong>Postdoctoral Researcher</strong><br>
+<a href="https://equipes.lps.u-psud.fr/ns2/">
+Nanostructure at Nanosecond Group</a>,
+Laboratoire de Physique des Solides,
+Université Paris-Saclay / CNRS, Orsay, France<br>
+<span class="small">April 2023 – March 2024</span>
+</p>
+
+<p>
+<strong>Newton-Bhabha PhD Placement Fellow</strong><br>
+<a href="https://www.nano-science.com/">
+Lancaster University Nanoscience Group</a>,
+Lancaster University, United Kingdom<br>
+<span class="small">September 2021 – January 2022</span>
+</p>
+
+<p>
+<strong>PhD in Physics</strong><br>
+Research conducted at the
+<a href="https://iacs.res.in/athusers/index.php?navid=0&userid=IACS006">
+Semiconductor Device Physics Group</a>,
+Indian Association for the Cultivation of Science,
+Kolkata, India.<br>
+Degree awarded by Jadavpur University, India.<br>
+<span class="small">January 2018 – January 2023</span>
+</p>
+
+</section>
+
+
 <!-- AWARDS -->
 
-<section id="awards">
+<section id="awards" class="tab-content">
 
 <h2>Awards and Fellowships</h2>
 
 <ul class="award-list">
 
 <li>
-    <strong>Ramanujan Fellowship</strong>
-    <span class="award-details">
-        ANRF, India · August 2025
-        <br>
-        Re-entry fellowship in India; offered, not availed.
-        <br>
-        Research grant: ₹3.5 million.
-    </span>
+<strong>Ramanujan Fellowship</strong>
+<span class="award-details">
+ANRF, India · August 2025<br>
+Re-entry fellowship in India; offered, not availed.<br>
+Research grant: ₹3.5 million.
+</span>
 </li>
 
 <li>
-    <strong>Marie Skłodowska-Curie Actions Postdoctoral Fellowship</strong>
-    <span class="award-details">
-        European Union · February 2024
-        <br>
-        Individual postdoctoral fellowship.
-        <br>
-        Research grant: €24,000.
-    </span>
+<strong>Marie Skłodowska-Curie Actions Postdoctoral Fellowship</strong>
+<span class="award-details">
+European Union · February 2024<br>
+Individual postdoctoral fellowship.<br>
+Research grant: €24,000.
+</span>
 </li>
 
 <li>
-    <strong>Excellence Fellowship</strong>
-    <span class="award-details">
-        Israel Academy of Sciences, Israel · February 2023
-        <br>
-        Individual postdoctoral fellowship; offered, not availed.
-    </span>
+<strong>Excellence Fellowship</strong>
+<span class="award-details">
+Israel Academy of Sciences, Israel · February 2023<br>
+Individual postdoctoral fellowship; offered, not availed.
+</span>
 </li>
 
 <li>
-    <strong>Young Scientist Award</strong>
-    <span class="award-details">
-        Materials Research Society of India · December 2022
-    </span>
+<strong>Young Scientist Award</strong>
+<span class="award-details">
+Materials Research Society of India · December 2022
+</span>
 </li>
 
 <li>
-    <strong>Newton–Bhabha PhD Placement Award</strong>
-    <span class="award-details">
-        British Council, UK · September 2021
-        <br>
-        Awarded through a selection of the top 10 PhD candidates from India.
-    </span>
+<strong>Newton–Bhabha PhD Placement Award</strong>
+<span class="award-details">
+British Council, UK · September 2021<br>
+Awarded through a selection of the top 10 PhD candidates from India.
+</span>
 </li>
 
 <li>
-    <strong>Young Achievers Award</strong>
-    <span class="award-details">
-        Institute of Scholars, India · May 2021
-    </span>
+<strong>Young Achievers Award</strong>
+<span class="award-details">
+Institute of Scholars, India · May 2021
+</span>
 </li>
 
 <li>
-    <strong>State-Level Rank in School Leaving Examination</strong>
-    <span class="award-details">
-        India · June 2012
-        <br>
-        Among more than 500,000 students.
-    </span>
+<strong>State-Level Rank in School Leaving Examination</strong>
+<span class="award-details">
+India · June 2012<br>
+Among more than 500,000 students.
+</span>
 </li>
 
 </ul>
 
 </section>
 
-<!-- INVITED TALKS AND CONFERENCE PRESENTATIONS -->
 
-<section id="talks">
+<!-- TALKS -->
+
+<section id="talks" class="tab-content">
 
 <h2>Invited Talks and Conference Presentations</h2>
 
 <ul class="talk-list">
 
 <li>
-    <strong>Contributed Talk · APS March Meeting</strong>
-    <span class="talk-details">Denver, USA · March 2026</span>
-    <span class="talk-title">Majorana or Not? An Insight from Atomic-Scale Shot Noise</span>
+<strong>Contributed Talk · APS March Meeting</strong>
+<span class="talk-details">Denver, USA · March 2026</span>
+<span class="talk-title">Majorana or Not? An Insight from Atomic-Scale Shot Noise</span>
 </li>
 
 <li>
-    <strong>Contributed Talk · DPG Conference</strong>
-    <span class="talk-details">Dresden, Germany · March 2026</span>
-    <span class="talk-title">Majorana or Not? An Insight from Atomic-Scale Shot Noise</span>
+<strong>Contributed Talk · DPG Conference</strong>
+<span class="talk-details">Dresden, Germany · March 2026</span>
+<span class="talk-title">Majorana or Not? An Insight from Atomic-Scale Shot Noise</span>
 </li>
 
 <li>
-    <strong>Invited Talk · Radboud University</strong>
-    <span class="talk-details">Nijmegen, Netherlands · February 2026</span>
-    <span class="talk-title">Detecting and Distinguishing Majorana Zero Modes through Atomic-Scale Shot Noise</span>
+<strong>Invited Talk · Radboud University</strong>
+<span class="talk-details">Nijmegen, Netherlands · February 2026</span>
+<span class="talk-title">Detecting and Distinguishing Majorana Zero Modes through Atomic-Scale Shot Noise</span>
 </li>
 
 <li>
-    <strong>Invited Talk · Columbia University</strong>
-    <span class="talk-details">New York, USA · February 2026</span>
-    <span class="talk-title">Atomic-Scale Shot Noise Spectroscopy: Visualizing Electron Dynamics at the Atomic Scale</span>
+<strong>Invited Talk · Columbia University</strong>
+<span class="talk-details">New York, USA · February 2026</span>
+<span class="talk-title">Atomic-Scale Shot Noise Spectroscopy: Visualizing Electron Dynamics at the Atomic Scale</span>
 </li>
 
 <li>
-    <strong>Invited Talk · NSCPU GDR</strong>
-    <span class="talk-details">Strasbourg, France · November 2025</span>
-    <span class="talk-title">Evidence of Electron Bunching at the Atomic Scale through Vibronic Coupling</span>
+<strong>Invited Talk · NSCPU GDR</strong>
+<span class="talk-details">Strasbourg, France · November 2025</span>
+<span class="talk-title">Evidence of Electron Bunching at the Atomic Scale through Vibronic Coupling</span>
 </li>
 
 <li>
-    <strong>Invited Talk · AXE2, LPS</strong>
-    <span class="talk-details">Orsay, France · October 2025</span>
-    <span class="talk-title">Majorana or Not? Revealing the True Nature of Zero-Energy Bound States through Shot Noise</span>
+<strong>Invited Talk · AXE2, LPS</strong>
+<span class="talk-details">Orsay, France · October 2025</span>
+<span class="talk-title">Majorana or Not? Revealing the True Nature of Zero-Energy Bound States through Shot Noise</span>
 </li>
 
 <li>
-    <strong>Invited Talk · University of Washington</strong>
-    <span class="talk-details">Seattle, USA · October 2025</span>
-    <span class="talk-title">Scanning Probe Microscopy: Visualizing Interactions in Functional Materials</span>
+<strong>Invited Talk · University of Washington</strong>
+<span class="talk-details">Seattle, USA · October 2025</span>
+<span class="talk-title">Scanning Probe Microscopy: Visualizing Interactions in Functional Materials</span>
 </li>
 
 <li>
-    <strong>Contributed Talk · ICMAT</strong>
-    <span class="talk-details">Singapore · June 2025</span>
-    <span class="talk-title">Evidence of Atomic-Scale Electron Bunching through Vibronic Coupling</span>
+<strong>Contributed Talk · ICMAT</strong>
+<span class="talk-details">Singapore · June 2025</span>
+<span class="talk-title">Evidence of Atomic-Scale Electron Bunching through Vibronic Coupling</span>
 </li>
 
 <li>
-    <strong>Invited Talk · SMQ, LPS</strong>
-    <span class="talk-details">Orsay, France · January 2025</span>
-    <span class="talk-title">Visualizing Electron Pairing through Vibronic Coupling</span>
+<strong>Invited Talk · SMQ, LPS</strong>
+<span class="talk-details">Orsay, France · January 2025</span>
+<span class="talk-title">Visualizing Electron Pairing through Vibronic Coupling</span>
 </li>
 
 <li>
-    <strong>Contributed Talk · E-MRS</strong>
-    <span class="talk-details">Warsaw, Poland · September 2024</span>
-    <span class="talk-title">Atomic-Scale Bunching of Electrons in a Nano-Electromechanical Resonator</span>
+<strong>Contributed Talk · E-MRS</strong>
+<span class="talk-details">Warsaw, Poland · September 2024</span>
+<span class="talk-title">Atomic-Scale Bunching of Electrons in a Nano-Electromechanical Resonator</span>
 </li>
 
 <li>
-    <strong>Contributed Talk · FisMat</strong>
-    <span class="talk-details">Milan, Italy · September 2023</span>
-    <span class="talk-title">Emergence of a Hidden Topological Insulator Phase in Hybrid Halide Perovskite</span>
+<strong>Contributed Talk · FisMat</strong>
+<span class="talk-details">Milan, Italy · September 2023</span>
+<span class="talk-title">Emergence of a Hidden Topological Insulator Phase in Hybrid Halide Perovskite</span>
 </li>
 
 <li>
-    <strong>Poster · Frontières Quantiques</strong>
-    <span class="talk-details">Paris, France · May 2023</span>
-    <span class="talk-title">Emergence of a Hidden Topological Insulator Phase in Hybrid Halide Perovskites</span>
+<strong>Poster · Frontières Quantiques</strong>
+<span class="talk-details">Paris, France · May 2023</span>
+<span class="talk-title">Emergence of a Hidden Topological Insulator Phase in Hybrid Halide Perovskites</span>
 </li>
 
 <li>
-    <strong>Poster · MRSI Young Scientist Colloquium</strong>
-    <span class="talk-details">Kolkata, India · December 2022</span>
-    <span class="talk-title">Spin-Photovoltaic Effect in Chiral Perovskites towards Circularly Polarized Light Detection</span>
+<strong>Poster · MRSI Young Scientist Colloquium</strong>
+<span class="talk-details">Kolkata, India · December 2022</span>
+<span class="talk-title">Spin-Photovoltaic Effect in Chiral Perovskites towards Circularly Polarized Light Detection</span>
 </li>
 
 <li>
-    <strong>Contributed Talk · WNCST</strong>
-    <span class="talk-details">Chennai, India · March 2021</span>
-    <span class="talk-title">Methylammonium Lead Iodide: Slow Recombination Unveiled</span>
+<strong>Contributed Talk · WNCST</strong>
+<span class="talk-details">Chennai, India · March 2021</span>
+<span class="talk-title">Methylammonium Lead Iodide: Slow Recombination Unveiled</span>
 </li>
 
 <li>
-    <strong>Contributed Talk · JSPS-DST Bilateral Project</strong>
-    <span class="talk-details">Kolkata, India · February 2021</span>
-    <span class="talk-title">Rashba Splitting in Methylammonium Lead Iodide</span>
+<strong>Contributed Talk · JSPS-DST Bilateral Project</strong>
+<span class="talk-details">Kolkata, India · February 2021</span>
+<span class="talk-title">Rashba Splitting in Methylammonium Lead Iodide</span>
 </li>
 
 <li>
-    <strong>Poster · Winter School, JNCASR</strong>
-    <span class="talk-details">Bengaluru, India · December 2020</span>
-    <span class="talk-title">A Direct Observation of Rashba Splitting in Methylammonium Lead Iodide</span>
+<strong>Poster · Winter School, JNCASR</strong>
+<span class="talk-details">Bengaluru, India · December 2020</span>
+<span class="talk-title">A Direct Observation of Rashba Splitting in Methylammonium Lead Iodide</span>
 </li>
 
 <li>
-    <strong>Contributed Talk · EESTER 2020</strong>
-    <span class="talk-details">Chennai, India · December 2020</span>
-    <span class="talk-title">Rashba Splitting in Methylammonium Lead Iodide</span>
+<strong>Contributed Talk · EESTER 2020</strong>
+<span class="talk-details">Chennai, India · December 2020</span>
+<span class="talk-title">Rashba Splitting in Methylammonium Lead Iodide</span>
 </li>
 
 <li>
-    <strong>E-Poster · MRS Fall Meeting</strong>
-    <span class="talk-details">Boston, USA · November 2020</span>
-    <span class="talk-title">A Direct Observation of Rashba Splitting in Methylammonium Lead Iodide</span>
+<strong>E-Poster · MRS Fall Meeting</strong>
+<span class="talk-details">Boston, USA · November 2020</span>
+<span class="talk-title">A Direct Observation of Rashba Splitting in Methylammonium Lead Iodide</span>
 </li>
 
 </ul>
 
 </section>
 
-<!-- REFERENCES -->
 
-<section id="references">
+<!-- ABOUT -->
+
+<section id="about" class="tab-content">
+
+<h2>About</h2>
+
+<p>
+Recent advances in condensed matter physics and material science
+are increasingly shaped by two major frontiers: nanotechnology
+and quantum materials.
+</p>
+
+<p>
+My research aims to bridge these fields by harnessing nanoscience
+to probe and engineer quantum materials with atomic precision.
+</p>
+
+<p>
+My favourite experimental technique is scanning tunnelling
+microscopy (STM), which enables atomic-scale imaging and probing
+electronic density of states. In addition, STM also offers the
+ability to manipulate individual atoms on the surface and
+construct atomically precise nanostructures.
+</p>
+
+<p>
+Furthermore, by integrating high-frequency techniques into
+conventional STM setups, one can investigate time-domain
+phenomena and access dynamical information at the atomic scale.
+</p>
+
+<p>
+This makes it a powerful tool not only for exploring quantum
+phenomena at the atomic scale but also for engineering novel
+quantum systems with tailored functionalities.
+</p>
+
+<p>
+My long-term vision is to build quantum matter and technologies
+atom by atom, using individual quantum building blocks to
+create functionalities with long coherence time.
+</p>
 
 <h2>References</h2>
 
-<div class="reference-list">
+<div class="reference">
 
-    <div class="reference">
-        <strong>Prof. Amlan J. Pal</strong>
-        <span class="reference-role">PhD Supervisor</span>
+<strong>Prof. Amlan J. Pal</strong>
+<span class="reference-role">PhD Supervisor</span>
 
-        <p>
-            DAE Raja Ramanna Chair<br>
-            Former Director, UGC-DAE Consortium for Scientific Research, Indore<br>
-            Senior Professor and J. C. Bose Fellow<br>
-            Kolkata Centre, UGC-DAE CSR<br>
-            Indian Association for the Cultivation of Science, India
-        </p>
+<p>
+DAE Raja Ramanna Chair<br>
+Former Director, UGC-DAE Consortium for Scientific Research, Indore<br>
+Senior Professor and J. C. Bose Fellow<br>
+Kolkata Centre, UGC-DAE CSR<br>
+Indian Association for the Cultivation of Science, India
+</p>
 
-        <a href="mailto:sspajp@iacs.res.in">
-            sspajp@iacs.res.in
-        </a>
-    </div>
+<a href="mailto:sspajp@iacs.res.in">sspajp@iacs.res.in</a>
 
-    <div class="reference">
-        <strong>Dr. Freek Massee</strong>
-        <span class="reference-role">Postdoctoral Advisor</span>
+</div>
 
-        <p>
-            Permanent Researcher<br>
-            Laboratoire de Physique des Solides<br>
-            Université Paris-Saclay / CNRS, France
-        </p>
+<div class="reference">
 
-        <a href="mailto:freek.massee@universite-paris-saclay.fr">
-            freek.massee@universite-paris-saclay.fr
-        </a>
-    </div>
+<strong>Dr. Freek Massee</strong>
+<span class="reference-role">Postdoctoral Advisor</span>
+
+<p>
+Permanent Researcher<br>
+Laboratoire de Physique des Solides<br>
+Université Paris-Saclay / CNRS, France
+</p>
+
+<a href="mailto:freek.massee@universite-paris-saclay.fr">
+freek.massee@universite-paris-saclay.fr
+</a>
 
 </div>
 
@@ -914,14 +1064,58 @@ in Limiting the Performance of Solar Cells.
 
 </main>
 
-
 <footer>
-
-<p>
-© 2026 Abhishek Maiti. Academic Homepage.
-</p>
-
+<p>© 2026 Abhishek Maiti. Academic Homepage.</p>
 </footer>
+
+
+<script>
+
+function showTab(tabId, button) {
+
+    // Hide all sections
+    document.querySelectorAll(".tab-content").forEach(section => {
+        section.classList.remove("active");
+    });
+
+    // Remove active navigation style
+    document.querySelectorAll("nav button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    // Show selected section
+    document.getElementById(tabId).classList.add("active");
+
+    // Highlight selected tab
+    button.classList.add("active");
+
+    // Return to top of page
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    // Update browser address without reloading
+    history.replaceState(null, "", "#" + tabId);
+}
+
+// Support browser back/forward and direct tab links
+window.addEventListener("load", function() {
+
+    const tabId = window.location.hash.substring(1);
+
+    if (tabId) {
+        const button = [...document.querySelectorAll("nav button")]
+            .find(btn => btn.getAttribute("onclick").includes("'" + tabId + "'"));
+
+        if (document.getElementById(tabId) && button) {
+            showTab(tabId, button);
+        }
+    }
+
+});
+
+</script>
 
 </body>
 </html>
